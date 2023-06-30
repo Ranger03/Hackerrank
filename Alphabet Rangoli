@@ -1,0 +1,19 @@
+
+def rangoli(size):
+    alpha ="abcdefghijklmnopqrstuvxwyz"
+    data = "".join([ alpha[s] for s in range(size)][::-1])
+    li = [alpha[q] for q in range(size)][::-1]
+    mt = []
+    mt_rev = []
+    num = 0
+    for j in range(1,size+1):
+        data1 = [data[i] for i in range(j)]
+        inner = "-".join(data1) +"-"+ "-".join(mt)
+        mt.insert(0,li[num])
+        print(inner.center(4*size-3,"-"))
+        mt_rev.append(inner.center(4*size-3,"-"))
+        num = num + 1
+    for i in range(1,size):
+        print(mt_rev[::-1][i])
+
+rangoli(15)
